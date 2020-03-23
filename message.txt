@@ -1,1 +1,1 @@
-DUMMY
+message=Hello%21
