@@ -20,7 +20,7 @@ const requestHandler = (req, res) => {
         });
         return req.on('end', function(){
             const parsedBody = Buffer.concat(body).toString();
-            const message = parsedBody.split('='[1]);
+            const message = parsedBody.split('=')[1];
             fs.writeFile('message.txt', message, function(err){
                 res.statusCode = 302;
                 res.setHeader('Location', '/');
