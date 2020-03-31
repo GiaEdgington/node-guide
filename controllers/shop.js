@@ -5,7 +5,7 @@ exports.getProducts = (req, res, next) => {
         res.render('shop/product-list', 
         { prods: products, 
         pageTitle: 'All Products',
-        path:'/product'
+        path:'/products'
         });
     });
 };
@@ -24,6 +24,13 @@ exports.getCart = (req, res, nect) => {
     res.render('shop/cart', {
         path: '/cart',
         pageTitle: 'Your cart'
+    });
+};
+
+exports.getOrders = (req, res, nect) => {
+    res.render('shop/orders', {
+        path: '/orders',
+        pageTitle: 'Your cOrders'
     });
 };
 
