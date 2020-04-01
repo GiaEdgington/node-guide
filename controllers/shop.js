@@ -60,6 +60,15 @@ exports.postCart = (req, res, next) => {
     res.redirect('/cart');
 };
 
+exports.postCartDeleteProduct = (req, res, next) => {
+    const prodId = req.body.productId;
+    console.log(prodId);
+    Product.findById(prodId, product => {
+        Cart.deleteProduct(prodId, product.price);
+        res.redirect('/cart');
+    });   
+};
+
 exports.getOrders = (req, res, nect) => {
     res.render('shop/orders', {
         path: '/orders',
